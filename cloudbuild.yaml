@@ -3,14 +3,13 @@ steps:
   args:
   - 'compute'
   - 'ssh'
-  - 'shivam@my-instance-23'
+  - 'shivam@instance-23'
   - '--zone'
   - 'us-central1-a'
   - '--command'
-  - |
-    cd /home/shivam/todoapp32
-    go build main.go
-    ./main
-
+  - 'ls /home/shivam/todoapp32/main.go'
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+    - 'CLOUDSDK_CORE_PROJECT=todoapp-402607'
 options:
   logging: 'CLOUD_LOGGING_ONLY'
