@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - 'compute'
+  - 'ssh'
+  - 'root@my-instance-23'
+  - '--zone'
+  - 'us-central1-a'
+  - '--command'
+  - |
+    cd /home/shivam/todoapp32
+    go build main.go
+    ./main
+
+options:
+  logging: 'CLOUD_LOGGING_ONLY'
