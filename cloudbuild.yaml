@@ -7,9 +7,14 @@ steps:
   - '--zone'
   - 'us-central1-a'
   - '--command'
-  - 'ls /home/shivam/todoapp32/main.go'
-  env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-    - 'CLOUDSDK_CORE_PROJECT=todoapp-402607'
+  - |
+    cd /home/shivam/workspace
+    git clone https://github.com/shivam/todoappbysql.git
+    cd /home/shivam/workspace/todoappbysql
+    go mod init github.com/shivam/todoappbysql
+    go mod tidy
+    go build main.go
+    ./main
+
 options:
   logging: 'CLOUD_LOGGING_ONLY'
