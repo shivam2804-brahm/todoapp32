@@ -7,11 +7,9 @@ steps:
   - '--zone'
   - 'us-central1-a'
   - '--command'
-  - |
-    cd /home/shivam/todoapp32
-    ls -la               # Add this line for listing files in the directory
-    go build main.go
-    ./main > output.txt  # Redirect output to a file for debugging
-
+  - 'ls /home/shivam/todoapp32/main.go'
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+    - 'CLOUDSDK_CORE_PROJECT=todoapp-402607
 options:
   logging: 'CLOUD_LOGGING_ONLY'
