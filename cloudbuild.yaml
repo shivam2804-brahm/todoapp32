@@ -3,14 +3,15 @@ steps:
   args:
   - 'compute'
   - 'ssh'
-  - 'shivam@instance-todo1'
+  - 'shivam@instance-23'
   - '--zone'
   - 'us-central1-a'
   - '--command'
   - |
     cd /home/shivam/todoapp32
+    ls -la               # Add this line for listing files in the directory
     go build main.go
-    ./main
+    ./main > output.txt  # Redirect output to a file for debugging
 
 options:
   logging: 'CLOUD_LOGGING_ONLY'
